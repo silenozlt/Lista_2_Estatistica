@@ -21,7 +21,6 @@ plot(destilados, xlab = "Nivel Hidrocarbonetos", ylab = "Pureza Oxigenio")
 abline(lm(destilados$y~destilados$x), h=0,col="blue")
 
 
-
 #3. Ajuste o modelo de regressa ̃o entre X e Y. Quais os valores ajustados para os coeficientes β0 (intercepto) e β1?
 destilados_ajuste=lm(destilados$y~destilados$x)
 destilados_ajuste
@@ -30,3 +29,12 @@ destilados_ajuste
 #4. A relacao linear entre o nıvel de hidrocarbonetos (X) e a pureza do oxigenio (Y)  e significativa?
 
 
+
+#5. Qual e o coeficiente de determinacao̧ do modelo? O que esse numero representa?
+
+
+#6. Fa ̧ca a an ́alise de res ́ıduos e conclua se o modelo ajustado  ́e adequado para o conjunto de dados.
+
+
+
+#7. Qual  ́e o valor predito da pureza do oxigˆenio para um n ́ıvel de hidro- carbonetos igual a 1,08?
