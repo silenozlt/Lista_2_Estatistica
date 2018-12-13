@@ -1,4 +1,7 @@
-#lista 2
+#lista 2,
+#limpado
+rm(list=ls(all=TRUE))
+
 #CARREGANDO ARQUIVO CBO2002_Familia.csv
 
 require(gmodels)
@@ -24,10 +27,11 @@ plot(destilados, xlab = "Nivel Hidrocarbonetos", ylab = "Pureza Oxigenio")
 
 #2. Calcule o coeficiente de correlac̃ao de Pearson entre X e Y
 # Qual a interpretac ̧ ̃ao sobre o coeficiente? Ele confirma a sua resposta do item 1?
-cor(destilados)
+with(destilados,cor(x,y))
+cor(destilados$x,destilados$y)
 
 #3. Ajuste o modelo de regressa ̃o entre X e Y. Quais os valores ajustados para os coeficientes β0 (intercepto) e β1?
-destilados_ajuste=lm(destilados$y~destilados$x)
+destilados_ajuste=lm(destilados$y~destilados$x, data = destilados)
 destilados_ajuste
 confint(destilados_ajuste)
 #Resp : 74.28 e 14.95
