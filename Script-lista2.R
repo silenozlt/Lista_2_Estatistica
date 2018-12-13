@@ -23,9 +23,24 @@ cor(destilados)
 #3. Ajuste o modelo de regressa ̃o entre X e Y. Quais os valores ajustados para os coeficientes β0 (intercepto) e β1?
 destilados_ajuste=lm(destilados$y~destilados$x)
 destilados_ajuste
+confint(destilados_ajuste)
 #Resp : 74.28 e 14.95
 
 #4. A relacao linear entre o nıvel de hidrocarbonetos (X) e a pureza do oxigenio (Y)  e significativa?
+
+
+
+#5. Qual é o coeficiente de determinacao do modelo ? o que esse numero representa ?
+
+
+
+#6. Faça a analise de residuos e conclua se o modelo ajustado e adequado para o conjunto de dados.
+
+
+
+#7. Qual é o valor predito da pureza do oxigenio para um nivel de hidrobarnonetos igual a 1,08 ?
+
+
 
 
 
