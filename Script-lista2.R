@@ -1,6 +1,12 @@
 #lista 2
 #CARREGANDO ARQUIVO CBO2002_Familia.csv
 
+require(gmodels)
+require(ggplot2)
+require(dplyr)
+require(plyr)
+require(nortest)
+
 #Setando diretorio de trabalho
 setwd("/Users/cassio/Dropbox/Pos Data Science/Lista_2_Estatistica")
 
@@ -35,11 +41,18 @@ confint(destilados_ajuste)
 
 
 #6. Faça a analise de residuos e conclua se o modelo ajustado e adequado para o conjunto de dados.
-
-
+require(nortest)
+residuos <- destilados_ajuste$residuals
+ad.test(residuos)
 
 #7. Qual é o valor predito da pureza do oxigenio para um nivel de hidrobarnonetos igual a 1,08 ?
+confint(destilados_ajuste)
+valor <- data.frame(hidrocarboneto=c(1.08))
+print(valor)
 
+predict(destilados_ajuste,carboneto=c(1.08))
+
+summary(destilados_ajuste)
 
 
 
