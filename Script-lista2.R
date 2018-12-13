@@ -41,7 +41,4 @@ lm(formula = destilados$y ~ destilados$x)
 cor.test(destilados$y~destilados$x)
 
 
-cor.test(destilados$x,destilados$y,,
-         alternative = c("two.sided", "less", "greater"),
-         method = c("pearson", "kendall", "spearman"),
-         exact = NULL, conf.level = 0.95, continuity = FALSE)
+
