@@ -27,13 +27,11 @@ plot(destilados, xlab = "Nivel Hidrocarbonetos", ylab = "Pureza Oxigenio")
 
 #2. Calcule o coeficiente de correlac̃ao de Pearson entre X e Y
 # Qual a interpretac ̧ ̃ao sobre o coeficiente? Ele confirma a sua resposta do item 1?
-with(destilados,cor(x,y))
 cor(destilados$x,destilados$y)
 
-#3. Ajuste o modelo de regressa ̃o entre X e Y. Quais os valores ajustados para os coeficientes β0 (intercepto) e β1?
+0#3. Ajuste o modelo de regressa ̃o entre X e Y. Quais os valores ajustados para os coeficientes β0 (intercepto) e β1?
 destilados_ajuste=lm(destilados$y~destilados$x, data = destilados)
 destilados_ajuste
-confint(destilados_ajuste)
 #Resp : 74.28 e 14.95
 
 #4. A relacao linear entre o nıvel de hidrocarbonetos (X) e a pureza do oxigenio (Y)  e significativa?
@@ -54,9 +52,7 @@ confint(destilados_ajuste)
 valor <- data.frame(hidrocarboneto=c(1.08))
 print(valor)
 
-predict(destilados_ajuste,carboneto=c(1.08))
-
-summary(destilados_ajuste)
+predict(object=destilados_ajuste,newdata = data.frame(altura=c(1.08)))
 
 
 
