@@ -7,7 +7,6 @@ rm(list=ls(all=TRUE))
 require(gmodels)
 require(ggplot2)
 require(dplyr)
-require(plyr)
 require(nortest)
 
 #Setando diretorio de trabalho
@@ -29,17 +28,25 @@ plot(destilados, xlab = "Nivel Hidrocarbonetos", ylab = "Pureza Oxigenio")
 # Qual a interpretac ̧ ̃ao sobre o coeficiente? Ele confirma a sua resposta do item 1?
 cor(destilados$x,destilados$y)
 
-0#3. Ajuste o modelo de regressa ̃o entre X e Y. Quais os valores ajustados para os coeficientes β0 (intercepto) e β1?
-destilados_ajuste=lm(destilados$y~destilados$x, data = destilados)
+#3. Ajuste o modelo de regressa ̃o entre X e Y. Quais os valores ajustados para os coeficientes β0 (intercepto) e β1?
+destilados_ajuste <- lm(y ~ x, data = destilados)
+
+summary(destilados_ajuste) 
 destilados_ajuste
+confint(destilados_ajuste)
 #Resp : 74.28 e 14.95
+
 
 #4. A relacao linear entre o nıvel de hidrocarbonetos (X) e a pureza do oxigenio (Y)  e significativa?
 
 
+#RESP: sim a relacao entre hidrocarbonetos e oxigenio e significativa
+
 
 #5. Qual é o coeficiente de determinacao do modelo ? o que esse numero representa ?
 
+
+#RESP: 0.9367154 e uma correlação linear forte.
 
 
 #6. Faça a analise de residuos e conclua se o modelo ajustado e adequado para o conjunto de dados.
@@ -65,8 +72,10 @@ lm(formula = destilados$y ~ destilados$x)
 
 
 #7. Qual  ́e o valor predito da pureza do oxigˆenio para um n ́ıvel de hidro- carbonetos igual a 1,08?
+predict(object = destilados_ajuste, newdata = data.frame(x = c(1.08)))
 
 cor.test(destilados$y~destilados$x)
+
 
 
 
