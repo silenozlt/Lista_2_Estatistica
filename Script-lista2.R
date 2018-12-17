@@ -71,8 +71,8 @@ predict(object = destilados_ajuste, newdata = data.frame(x = c(1.08)))
 #EXERCICIO 2
 #O arquivo dados salario.csv cont ́em informa ̧co ̃es de sala ́rio-hora (em do ́lares), educa ̧ca ̃o (em anos de e
 #estudo), idade (em anos), sexo e idioma de 3.987 canadenses.
-rm(list=ls(all=TRUE))
 
+rm(list=ls(all=TRUE))
 
 #CARREGANDO PACOTES
 require(gmodels)
@@ -98,7 +98,14 @@ plot(salarios$idade, salarios$salario ,main = "Grafico - salario x idade")
 cor(salarios$idade, salarios$salario)
 
 
-# Construa boxplots de sal ́ario por sexo e por idioma. Analise os box- plots.
+#2. Construa boxplots de sal ́ario por sexo e por idioma. Analise os box- plots.
+boxplot(salarios$salario, salarios$sexo)
+
+boxplot(salarios$salario, salarios$idioma)
 
 
+#3.Ajuste o modelo de regressa ̃o linear mu ́ltipla. Quais covari ́aveis s ̃ao significativas para explicar o sala ́rio?
+modelo<- lm(salarios)
+modelo
 
+#Resp: Genero e educacao sao significativas para justicar o salario.
