@@ -67,3 +67,28 @@ predict(object = destilados_ajuste, newdata = data.frame(x = c(1.08)))
 #Resp: 90.42659
 
 
+######################################################################################################
+#EXERCICIO 2
+#O arquivo dados salario.csv cont ́em informa ̧co ̃es de sala ́rio-hora (em do ́lares), educa ̧ca ̃o (em anos de e
+#estudo), idade (em anos), sexo e idioma de 3.987 canadenses.
+rm(list=ls(all=TRUE))
+
+
+#CARREGANDO PACOTES
+require(gmodels)
+require(ggplot2)
+require(dplyr)
+require(nortest)
+
+#CARREGANDO ARQUIVO dados_salario.csv
+
+#Setando diretorio de trabalho
+setwd("/Users/cassio/Dropbox/Pos Data Science/Lista_2_Estatistica")
+
+#Carregando base de dados
+salarios <- read.csv("dados_salario.csv", sep = ",", header = TRUE, na.strings = "")
+View(salarios)
+
+
+
+
