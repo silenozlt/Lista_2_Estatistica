@@ -54,28 +54,16 @@ require(nortest)
 residuos <- destilados_ajuste$residuals
 ad.test(residuos)
 
+#RESP: REJEITADO DEVIDO AO APLHA SER MENOR QUE O PVALOR
 #7. Qual é o valor predito da pureza do oxigenio para um nivel de hidrobarnonetos igual a 1,08 ?
 confint(destilados_ajuste)
-valor <- data.frame(hidrocarboneto=c(1.08))
-print(valor)
+#valor <- data.frame(x=c(1.08))
+#print(valor)
 
-predict(object=destilados_ajuste,newdata = data.frame(altura=c(1.08)))
-
-
-
-
-#5. Qual e o coeficiente de determinacao̧ do modelo? O que esse numero representa?
-
-
-#6. Fa ̧ca a an ́alise de res ́ıduos e conclua se o modelo ajustado  ́e adequado para o conjunto de dados.
-lm(formula = destilados$y ~ destilados$x)
-
-
-#7. Qual  ́e o valor predito da pureza do oxigˆenio para um n ́ıvel de hidro- carbonetos igual a 1,08?
 predict(object = destilados_ajuste, newdata = data.frame(x = c(1.08)))
 
-cor.test(destilados$y~destilados$x)
 
 
+#Resp: 90.42659
 
 
