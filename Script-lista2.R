@@ -90,5 +90,15 @@ salarios <- read.csv("dados_salario.csv", sep = ",", header = TRUE, na.strings =
 View(salarios)
 
 
+#1. Construa gra ́ficos de dispersa ̃o entre o sal ́ario e as varia ́veis educa ̧c ̃ao e idade. Calcule os respectivos coeficientes de correla ̧c ̃ao.
+plot(salarios$educacao, salarios$salario ,main = "Grafico - salario x educacao")
+cor(salarios$educacao, salarios$salario)
+
+plot(salarios$idade, salarios$salario ,main = "Grafico - salario x idade")
+cor(salarios$idade, salarios$salario)
+
+
+# Construa boxplots de sal ́ario por sexo e por idioma. Analise os box- plots.
+
 
 
