@@ -109,3 +109,24 @@ modelo<- lm(salarios)
 modelo
 
 #Resp: Genero e educacao sao significativas para justicar o salario.
+
+#4. Interprete os coeficientes significativos.
+
+#Resp: os coeficientes de genero e educacao foram relevantes para justificar o salario, onde quanto maior os coeficientes maior o salario
+
+
+#5. Qual  ́e o coeficiente de determina ̧ca ̃o do modelo? O que esse nu ́mero representa?
+#Resp: -7.888.78
+
+#6. Fa ̧ca a an ́alise de res ́ıduos e conclua se o modelo ajustado  ́e adequado para o conjunto de dados.
+require(nortest)
+
+residuos <- modelo$residuals
+ad.test(residuos)
+
+#Resp. Modelo adequado devido ao alpha ser maior que o pvalor
+
+#7. Qual o sal ́ario m ́edio esperado para um trabalhador do sexo masculino com 35 anos de idade e 10 anos de escolaridade? E do sexo feminino?
+
+
+predict(object = modelo, newdata = data.frame(x = c(35)))
