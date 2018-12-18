@@ -23,10 +23,10 @@ View(destilados)
 plot(destilados, xlab = "Nivel Hidrocarbonetos", ylab = "Pureza Oxigenio")
 
 
-
 #2. Calcule o coeficiente de correlac̃ao de Pearson entre X e Y
 # Qual a interpretac ̧ ̃ao sobre o coeficiente? Ele confirma a sua resposta do item 1?
 cor(destilados$x,destilados$y)
+
 
 #3. Ajuste o modelo de regressa ̃o entre X e Y. Quais os valores ajustados para os coeficientes β0 (intercepto) e β1?
 destilados_ajuste <- lm(y ~ x, data = destilados)
@@ -99,11 +99,14 @@ cor(salarios$idade, salarios$salario)
 
 
 #2. Construa boxplots de sal ́ario por sexo e por idioma. Analise os box- plots.
+boxplot(salario ~ idioma, data = salarios, col = "blue")
+
+boxplot(sexo ~ idioma, data = salarios, col = "blue")
+
+
 boxplot(salarios$salario, salarios$sexo)
 
-boxplot(salarios$salario, salarios$idioma)
-
-
+?boxplot
 #3.Ajuste o modelo de regressa ̃o linear mu ́ltipla. Quais covari ́aveis s ̃ao significativas para explicar o sala ́rio?
 modelo<- lm(salarios)
 modelo
@@ -127,6 +130,8 @@ ad.test(residuos)
 #Resp. Modelo adequado devido ao alpha ser maior que o pvalor
 
 #7. Qual o sal ́ario m ́edio esperado para um trabalhador do sexo masculino com 35 anos de idade e 10 anos de escolaridade? E do sexo feminino?
+novo_male <- data.frame(idade=c(35), genero="Male", educacao=c(10), idioma="Other")
+predict(object = modelo, newdata = novo_male)
 
-
-predict(object = modelo, newdata = data.frame(x = c(35)))
+novo_female <- data.frame(idade=c(35), genero="Female", educacao=c(10), idioma="Other")
+predict(object = modelo, newdata = novo_female)
